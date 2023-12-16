@@ -15,7 +15,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function countCats(matrix) {
-  // Зміння в якій зберігатимемо к-сть котів
+  // Змінна в якій зберігатимемо к-сть котів
   let catCount = 0;
 
   // Ітеруємо кожен масив
