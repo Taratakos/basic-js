@@ -18,12 +18,12 @@ function deleteDigit(n) {
 
   // ітеруємо кожну позицію цифри
   for (let i = 0; i < numberStr.length; i += 1) {
-    // стоврюємо нове число включивши цифру на поточній позиції
+    // створюємо нове число виключивши цифру на поточній позиції
     const currentNum = parseInt(numberStr.substring(0, i) + numberStr.substring(i + 1));
-    // оновлюємо максимальний результат, якщо роточне число більше
+    // оновлюємо максимальний результат, якщо поточне число більше
     maxNumber = Math.max(maxNumber, currentNum)
   }
-  
+  // повертаємо мкс. число, отримане вилученням рівно однієї цифри
   return maxNumber;
 }
 
