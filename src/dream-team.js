@@ -13,9 +13,25 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-function createDreamTeam(/* members */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function createDreamTeam(members) {
+  // Первірка чи вхідні дані є масивом
+  if (!Array.isArray(members)) {
+    return false
+  }
+
+  // фільтр лише ті ел, які є рядками.
+  // масив, у якому кожен рядок обрізається до його першої літери, приведеної до верхнього регістру.
+  const dreamTeamLetters = members
+    .filter(member => typeof member === 'string')
+    .map(member => member.trim()[0].toUpperCase());
+  // первірка чи наявна хоча б одна валідна літера
+  if (dreamTeamLetters === 0) {
+    return false
+  }
+  // Сортування літер і обєднання їх в абревіатуру
+  const dreamTeamName = dreamTeamLetters.sort().join('')
+
+  return dreamTeamName
 }
 
 module.exports = {
