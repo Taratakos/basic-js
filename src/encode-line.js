@@ -17,7 +17,6 @@ function encodeLine(str) {
 
   let resultStr = '';
   let count = 1; // лічильник підрахунку послідовних входжень одного і того ж сиволу
-  let currentChar = str[0];
 
   for (let i = 0; i < str.length; i += 1) {
     if (str[i] === str[i + 1]) {
