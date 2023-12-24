@@ -13,10 +13,27 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 class DepthCalculator {
-  calculateDepth(/* arr */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+
+  calculateDepth(arr) {
+    // Змінна для зберігання максимальної глибини (початкове значення - 1)
+    let count = 1;
+
+    for (const key of arr) {
+      // Змінна для обчислення глибини поточного рівня (початкове значення - 1
+      let depth = 1
+      if (Array.isArray(key)) {
+        // Рекурсивний виклик для обчислення глибини вкладеного масиву
+        depth += this.calculateDepth(key)
+      }
+      if (depth > count) {
+        // Оновлення макс глибини, якщо поточна глибина більше попередньої максимальної
+        count = depth
+      }
+    }
+
+    return count
   }
+
 }
 
 module.exports = {
